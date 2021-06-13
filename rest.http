@@ -1,0 +1,30 @@
+@hostname= http://localhost:3000/users
+
+
+get {{hostname}}
+
+###
+post {{hostname}}
+Content-Type: application/json
+
+{
+    "username": "test",
+    "email": "test@test.com",
+    "password": "test123"
+}
+
+###
+post http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "test123"
+}
+
+###
+get http://localhost:3000/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM1NTMzYmI1OWE3NjBjY2JhNThjM2IiLCJpYXQiOjE2MjM1NDg2ODUsImV4cCI6MTYyMzU1MjI4NX0.m3r1hP8Dd0efKtV8DE2cMmdqWxsUHHznbba-3yvgmZI
+
+
+
